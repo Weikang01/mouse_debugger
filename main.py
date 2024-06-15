@@ -5,10 +5,10 @@ import threading
 import queue
 
 
-class MouseStatusApp:
+class MouseDebugApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Mouse Status")
+        self.root.title("Mouse Debugger")
         self.root.attributes('-topmost', True)
         self.create_widgets()
         # Start the listener thread
@@ -127,7 +127,7 @@ class MouseStatusApp:
         self.scroll_down_btn.config(bg="lightgrey")
 
     def open_github(self):
-        webbrowser.open_new("https://github.com/Weikang01")
+        webbrowser.open_new("https://github.com/Weikang01/mouse_debugger")
 
     def on_close(self):
         self.root.destroy()
@@ -135,6 +135,6 @@ class MouseStatusApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = MouseStatusApp(root)
+    app = MouseDebugApp(root)
     root.protocol("WM_DELETE_WINDOW", app.on_close)
     root.mainloop()
